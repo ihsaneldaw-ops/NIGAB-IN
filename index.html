@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIGAB-IN | Ihsan</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#f6f6f6;color:#222;padding-bottom:70px}
+.header{position:sticky;top:0;z-index:100;background:#fff;padding:10px 12px;border-bottom:1px solid #eee}
+.header-top{display:flex;align-items:center;gap:10px}
+.search-bar{flex:1;background:#f2f2f2;border-radius:20px;display:flex;align-items:center;padding:8px 12px;gap:8px}
+.search-bar input{border:none;background:transparent;flex:1;outline:none;font-size:14px}
+.tabs{display:flex;gap:18px;overflow-x:auto;margin-top:12px;white-space:nowrap;scrollbar-width:none}
+.tabs span{font-size:14px;padding-bottom:4px;color:#666}
+.tabs span.active{color:#000;font-weight:600;border-bottom:2px solid #000}
+.banner img{width:100%;height:260px;object-fit:cover}
+.info-bar{display:flex;background:#fff8e6;padding:10px 12px;gap:20px;font-size:12px;border-bottom:1px solid #eee}
+.cats{background:#fff;padding:16px 8px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.cat-item{text-align:center}
+.cat-item img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.cat-item p{font-size:11px;margin-top:4px}
+.products{background:#fff;padding:6px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.prod{background:#fff;overflow:hidden;position:relative}
+.prod img{width:100%;height:220px;object-fit:cover}
+.prod-info{padding:8px}
+.prod-title{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prod-price{font-weight:700;font-size:16px}
+.hot-tag{position:absolute;bottom:78px;left:0;background:linear-gradient(90deg,#ff6a00,#ff2e00);color:#fff;font-size:10px;padding:3px 10px;border-radius:0 10px 10px 0;font-weight:700}
+.detail{position:fixed;inset:0;background:#fff;z-index:200;overflow-y:auto;display:none}
+.detail.open{display:block}
+.detail-img{position:relative}
+.detail-img img{width:100%;height:420px;object-fit:cover}
+.counter{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:4px 8px;border-radius:12px}
+.color-section{padding:10px 0}
+.color-label{font-size:14px;font-weight:600;margin-bottom:8px}
+.color-list{display:flex;gap:8px}
+.color-box{width:56px;height:56px;border:2px solid #eee;cursor:pointer;position:relative;flex-shrink:0}
+.color-box.active{border-color:#000}
+.color-box img{width:100%;height:100%;object-fit:cover}
+.color-box.hot::after{content:'HOT';position:absolute;top:-6px;left:4px;background:#ff3b30;color:#fff;font-size:8px;padding:2px 4px;font-weight:700}
+.add-cart{position:sticky;bottom:0;background:#fff;padding:12px;border-top:1px solid #eee}
+.add-cart button{width:100%;background:#222;color:#fff;padding:14px;border:none;font-size:16px;font-weight:600}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-around;padding:6px 0;z-index:99}
+.nav-item{text-align:center;font-size:11px;color:#888}
+.nav-item.active{color:#000;font-weight:600}
+.signin-bar{position:fixed;bottom:52px;left:0;right:0;background:rgba(0,0,0,.85);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;font-size:13px;z-index:98}
+.signin-bar button{background:#fff;color:#000;border:none;padding:6px 16px;border-radius:16px;font-weight:600}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-top"><span>☰</span><span>✉️</span><div class="search-bar"><input placeholder="Search "></div><span>🤍</span><span>🛒</span></div>
+  <div class="tabs"><span class="active">All</span><span>Nigab</span><span>Scarf</span><span>Eibaia</span><span>Isdal</span><span>Home</span></div>
+</div>
+<div class="banner"><img src="https://i.ibb.co/C3YPVR35/fa84c38d8bca232c01d4a1f3d2df749a.jpg"></div>
+<div class="info-bar"><div>🚚 Free Shipping</div><div>📄 Easy Return</div></div>
+<div class="cats">
+  <div class="cat-item"><img src="https://i.ibb.co/B5GzpRC2/c141d6907d17f489bec56060fd5f613a.jpg"><p>Nigab</p></div>
+  <div class="cat-item"><img src="https://i.ibb.co/ZRTvGCsM/58ebe6a71aee2949d368f9de77d8b3f3.jpg"><p>Scarf</p></div>
+  <div class="cat-item"><img src="https://i.ibb.co/q3HsSKyp/ac4ad9af485817f8c8c495e0e7793fcb.jpg"><p>Eibaia</p></div>
+  <div class="cat-item"><img src="https://i.ibb.co/ZRJZyCVS/0745de56814113f7249fa3a19463f2f8.jpg"><p>Isdal</p></div>
+  <div class="cat-item"><img src="https://i.ibb.co/XrGNjYwB/1e08122953d026656b134eedbc66aae9.jpg"><p>Glovs</p></div>
+  <div class="cat-item"><img src="https://i.ibb.co/JWLq3TcJ/492a626d51aaf0b32444a3c5951d667d-1.jpg"><p>Bags</p></div>
+  <div class="cat-item"><img src="https://i.ibb.co/Ldwj7RcJ/b583ac5d6f17426f8250fd823b949061.jpg"><p>Shoes</p></div>
+  <div class="cat-item"><img src="https://i.ibb.co/rKkxLNQC/56b6e1b481ded9b57b1206b8399a35dd.jpg"><p>Dress</p></div>
+</div>
+<div class="products" id="products"></div>
+<div class="bottom-nav"><div class="nav-item active">Shop</div><div class="nav-item">Category</div><div class="nav-item">Trends</div><div class="nav-item">Cart</div><div class="nav-item">Me</div></div>
+
+<div class="detail" id="detail">
+  <div class="detail-img">
+    <img id="d-img" src="">
+    <span style="position:absolute;left:12px;top:12px;background:#fff;padding:6px 10px;border-radius:50%;cursor:pointer" onclick="closeDetail()">←</span>
+    <div class="counter" id="counter">1/5</div>
+  </div>
+  <div style="padding:14px">
+    <div style="font-size:20px;font-weight:700">From $<span id="d-price">0.70</span></div>
+    <p id="d-title" style="margin:8px 0;font-size:14px"></p>
+    <p>4.59 ★★★★★ (1000+)</p>
+    <div class="color-section">
+      <div class="color-label">Color: <span id="colorName">-</span></div>
+      <div class="color-list" id="colorList"></div>
+    </div>
+  </div>
+  <div class="add-cart"><button>Add to Cart</button></div>
+</div>
+
+<script>
+// ===== هنا تغيري براحتك - كل منتج عندو 5 صور خاصة بيهو =====
+const items=[
+{
+  title:"Product 1 -  Black & White",
+  price:"5.00",
+  // غيري الـ 5 روابط دي بصورك انتي للمنتج الاول
+  images:[
+    "https://i.ibb.co/gMj6WhBX/a97b6054147784facf7b9e673f2eeedd.jpg",
+    "https://i.ibb.co/1Y08z5nB/58defe4767c6a1aac7486093a9234fda.jpg",
+    "https://i.ibb.co/n8ZPBTpK/318e3a4ed01a4e03699011cb42b53be7.jpg",
+    "https://i.ibb.co/vCs3fDgf/d51ee0a90e6dcd44e75c852faed7b360.jpg",
+    "https://i.ibb.co/XxzWwqKV/696ba7bf630c4580cb72e2c54579d465.jpg",
+    "https://i.ibb.co/Swm9jdHv/fc46da397a1af59f626b4190b36b85dd.jpg"
+  ],
+  colors:["Black","Beige","Pink","Brown","White"],
+  hot:[true,false,true,false,false]
+},
+{
+  title:"Product 2 - Nigab",
+  price:"3.40",
+  // صور المنتج التاني - غيريها براحتك
+  images:[
+    "https://i.ibb.co/Xr6NZ3cQ/06c7e03fd1b0bae53da7e54d2f850846.jpg",
+    "https://i.ibb.co/LXdgpG3w/b075985ed5cbb71d4e3687d21d386b18.jpg",
+    "https://i.ibb.co/BH96hh3k/4c16f70df14840a4de0df783fed219fc.jpg",
+    "https://i.ibb.co/gMhv0LzQ/53b2b991ae96d97835600f1e4f21f11e.jpg",
+    "https://i.ibb.co/5XS9kxR4/eac0e271e193ef79e975dffe87a86053.jpg",
+    "https://i.ibb.co/HfMQmbhX/57ae47242e89555cafe3193bb3b079a6.jpg"
+    
+  ],
+  colors:["Red","Blue","Green","Yellow","White"],
+  hot:[false,true,false,false,true]
+},
+{
+  title:"Product 3 - Shoes",
+  price:"24.40",
+  images:[
+    "https://i.ibb.co/Y4KVrdC0/680f359e115eb02da731af717aa5143c.jpg",
+    "https://i.ibb.co/Ldwj7RcJ/b583ac5d6f17426f8250fd823b949061.jpg",
+    "https://i.ibb.co/rKkxLNQC/56b6e1b481ded9b57b1206b8399a35dd.jpg",
+    "https://i.ibb.co/JWLq3TcJ/492a626d51aaf0b32444a3c5951d667d-1.jpg",
+    "https://i.ibb.co/bMn14bvb/53f32ff0da64d2e3438aae3cb45e606a.jpg"
+  ],
+  colors:["Black","White","Grey","Navy","Brown"],
+  hot:[true,true,false,false,false]
+},
+{
+  title:"Product 4 - Isdal",
+  price:"10.00",
+  images:[
+    "https://i.ibb.co/ZRJZyCVS/0745de56814113f7249fa3a19463f2f8.jpg",
+    "https://i.ibb.co/q3HsSKyp/ac4ad9af485817f8c8c495e0e7793fcb.jpg",
+    "https://i.ibb.co/B5GzpRC2/c141d6907d17f489bec56060fd5f613a.jpg",
+    "https://i.ibb.co/ZRTvGCsM/58ebe6a71aee2949d368f9de77d8b3f3.jpg",
+    "https://i.ibb.co/XrGNjYwB/1e08122953d026656b134eedbc66aae9.jpg"
+  ],
+  colors:["Cream","Pink","Black","Blue","Beige"],
+  hot:[false,false,true,true,false]
+}
+];
+
+let currentProduct = null;
+const grid=document.getElementById('products');
+items.forEach((it,i)=>{
+ grid.innerHTML+=`<div class="prod" onclick="openDetail(${i})"><img src="${it.images[0]}"><div class="prod-info"><div class="prod-title">${it.title}</div><div class="prod-price">$${it.price}</div></div></div>`;
+});
+
+function openDetail(index){
+  currentProduct = items[index];
+  document.getElementById('d-img').src=currentProduct.images[0];
+  document.getElementById('d-price').innerText=currentProduct.price;
+  document.getElementById('d-title').innerText=currentProduct.title;
+  document.getElementById('counter').innerText="1/5";
+  document.getElementById('colorName').innerText=currentProduct.colors[0];
+
+  // ارسم الـ 5 مربعات الخاصة بالمنتج دا بس
+  const list=document.getElementById('colorList');
+  list.innerHTML="";
+  currentProduct.images.forEach((img,i)=>{
+    list.innerHTML+=`<div class="color-box ${i===0?'active':''} ${currentProduct.hot[i]?'hot':''}" onclick="selectColor(${i})"><img src="${img}"></div>`;
+  });
+  document.getElementById('detail').classList.add('open');
+}
+
+function selectColor(i){
+  document.getElementById('d-img').src=currentProduct.images[i];
+  document.getElementById('colorName').innerText=currentProduct.colors[i];
+  document.getElementById('counter').innerText=(i+1)+"/5";
+  document.querySelectorAll('.color-box').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.color-box')[i].classList.add('active');
+}
+
+function closeDetail(){document.getElementById('detail').classList.remove('open')}
+</script>
+</body>
+</html>
